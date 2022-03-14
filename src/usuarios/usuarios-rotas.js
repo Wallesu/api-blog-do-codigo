@@ -12,7 +12,7 @@ module.exports = (app) => {
         .get(usuariosControlador.lista)
 
     app.route('/usuario/:id').delete(
-        passport.authenticate('bearer', { session: false }),
+        middlewaresAutenticacao.bearer,
         usuariosControlador.deleta
     )
 }
